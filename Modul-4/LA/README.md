@@ -166,10 +166,32 @@ sudo echo "Tumod_4_DMZ_Firewall_15-Kelompok15" > /var/www/html/index.html
 sudo systemctl enable nginx
 sudo systemctl restart nginx
 ```
-## 4. Hasil Pengujian Kelompok 15
-
+## 4. Hasil Pengujian
 Berikut adalah dokumentasi hasil pengujian konektivitas yang telah dilakukan:
 
-### 4.1 Pengujian Konektivitas Internal & Eksternal
+### 4.1 Konektivitas Internal & Eksternal
+**Koneksi LAN ke Cisco Router**
 
-### 4.2 Pengujian Antar Zona
+
+**Koneksi LAN ke FortiGate**
+
+
+**Koneksi LAN ke MikroTik**
+
+
+**Koneksi Server LAN**
+
+
+### 4.2 Konektivitas Antar Zona
+**Koneksi WAN ke DMZ**
+
+
+**Koneksi WAN ke LAN**
+
+
+### 4.3 Pengujian Akses Web Server (Browser)
+**Pengujian Client LAN akses IP DMZ**
+
+
+**Pengujian Client WAN akses http://10.10.10.2 (Muncul Web Server)**
+
