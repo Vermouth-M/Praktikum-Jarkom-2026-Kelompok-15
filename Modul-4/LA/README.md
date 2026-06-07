@@ -5,7 +5,7 @@
 Berikut adalah rancangan topologi jaringan yang digunakan dalam simulasi PNETLab untuk pemisahan zona WAN (Outside/External), LAN (Inside/Internal), dan DMZ (Demilitarized Zone):
 
 <p align="center">
-  <img src="images/topologi%20tm4.png" alt="Topologi Jaringan Kelompok 15">
+  <img src="images/topologi%20tm4.jpeg" alt="Topologi Jaringan Kelompok 15">
 </p>
 
 ---
@@ -27,3 +27,25 @@ Berikut adalah rancangan topologi jaringan yang digunakan dalam simulasi PNETLab
 | 6 | **Ubuntu Server DMZ**| eth0 / ens3| 192.168.20.10/24 | 192.168.20.1 | Web Server DMZ (DNS: 8.8.8.8) |
 
 ---
+
+## 3. Konfigurasi Perangkat
+
+### 3.1 MikroTik ISP
+```bash
+# 1. Konfigurasi IP Address pada Interface
+/ip address
+add address=10.10.10.1/30 interface=ether2
+add address=172.16.100.1/24 interface=ether3
+
+# 2. Mengaktifkan DHCP Client pada ether1 ke Cloud
+/ip dhcp-client
+add interface=ether1 disabled=no
+
+# 3. Konfigurasi NAT Masquerade menuju Internet
+/ip firewall nat
+add chain=srcnat out-interface=ether1 action=masquerade
+
+# 4. Routing Static ke segmen internal via FortiGate (10.10.10.2)
+/ip route
+add dst-address=192.168.10.0/24 gateway=10.10.10.2
+add dst-address=192.168.20.0/24 gateway=10.10.10.2
