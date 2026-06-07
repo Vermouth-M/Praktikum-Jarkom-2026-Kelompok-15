@@ -170,16 +170,21 @@ sudo systemctl restart nginx
 Berikut adalah dokumentasi hasil pengujian konektivitas yang telah dilakukan:
 
 ### 4.1 Konektivitas Internal & Eksternal
+
 **Koneksi LAN ke Cisco Router**
+<br>
 ![](images/lan-cisco.jpeg)
 
 **Koneksi LAN ke FortiGate**
+<br>
 ![](images/lan-forgate.jpeg)
 
 **Koneksi LAN ke MikroTik**
+<br>
 ![](images/lan-mikrotik.jpeg)
 
 **Koneksi Server LAN**
+<br>
 ![](images/server-lan.jpeg)
 
 ### 4.2 Konektivitas Antar Zona
