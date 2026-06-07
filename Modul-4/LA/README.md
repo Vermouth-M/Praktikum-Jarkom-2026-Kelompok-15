@@ -49,3 +49,87 @@ add chain=srcnat out-interface=ether1 action=masquerade
 /ip route
 add dst-address=192.168.10.0/24 gateway=10.10.10.2
 add dst-address=192.168.20.0/24 gateway=10.10.10.2
+```
+
+### 3.2 Fortigate Firewall
+```bash
+config system interface
+    edit "port1"
+        set mode static
+        set ip 10.10.10.2 255.255.255.252
+        set allowaccess ping
+    next
+    edit "port2"
+        set mode static
+        set ip 10.20.20.1 255.255.255.252
+        set allowaccess ping
+    next
+    edit "port3"
+        set mode static
+        set ip 192.168.20.1 255.255.255.0
+        set allowaccess ping
+    next
+end
+
+# Routing (Default Route ke ISP & Static Route ke LAN)
+config router static
+    edit 1
+        set gateway 10.10.10.1
+        set device "port1"
+    next
+    edit 2
+        set dst 192.168.10.0 255.255.255.0
+        set gateway 10.20.20.2
+        set device "port2"
+    next
+end
+
+# Pembuatan Virtual IP (Port Forwarding Port 80 WAN ke Server DMZ)
+config firewall vip
+    edit "VIP_DMZ_HTTP"
+        set extip 10.10.10.2
+        set extintf "port1"
+        set mappedip "192.168.20.10"
+        set portforward enable
+        set protocol tcp
+        set extport 80
+        set lport 80
+    next
+end
+
+# Kebijakan Firewall (Firewall Policy)
+config firewall policy
+    edit 1
+        set name "LAN_to_WAN"
+        set srcintf "port2"
+        set dstintf "port1"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ALL"
+        set nat enable
+    next
+    edit 2
+        set name "LAN_to_DMZ"
+        set srcintf "port2"
+        set dstintf "port3"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ALL"
+    next
+    edit 3
+        set name "WAN_to_DMZ_HTTP"
+        set srcintf "port1"
+        set dstintf "port3"
+        set srcaddr "all"
+        set dstaddr "VIP_DMZ_HTTP"
+        set action accept
+        set schedule "always"
+        set service "HTTP"
+    next
+end
+
+```
