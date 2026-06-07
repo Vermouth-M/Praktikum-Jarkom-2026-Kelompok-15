@@ -4,7 +4,9 @@
 ## 1. Topologi Jaringan
 Berikut adalah rancangan topologi jaringan yang digunakan dalam simulasi PNETLab untuk pemisahan zona WAN (Outside/External), LAN (Inside/Internal), dan DMZ (Demilitarized Zone):
 
-![Topologi Jaringan Kelompok 15](images/topologi%20tm4.jpeg)
+<p align="center">
+  <img src="images/topologi%20tm4.jpeg" alt="Topologi Jaringan Kelompok 15">
+</p>
 
 ---
 
@@ -30,20 +32,137 @@ Berikut adalah rancangan topologi jaringan yang digunakan dalam simulasi PNETLab
 
 ### 3.1 MikroTik ISP
 ```bash
-# 1. Konfigurasi IP Address pada Interface
+# ==========================================
+# 1. KONFIGURASI MIKROTIK ISP
+# ==========================================
+# Konfigurasi IP Address pada Interface
 /ip address
 add address=10.10.10.1/30 interface=ether2
 add address=172.16.100.1/24 interface=ether3
 
-# 2. Mengaktifkan DHCP Client pada ether1 ke Cloud
+# Mengaktifkan DHCP Client pada ether1 ke Cloud
 /ip dhcp-client
 add interface=ether1 disabled=no
 
-# 3. Konfigurasi NAT Masquerade menuju Internet
+# Konfigurasi NAT Masquerade menuju Internet
 /ip firewall nat
 add chain=srcnat out-interface=ether1 action=masquerade
 
-# 4. Routing Static ke segmen internal via FortiGate (10.10.10.2)
+# Routing Static ke segmen internal via FortiGate (10.10.10.2)
 /ip route
 add dst-address=192.168.10.0/24 gateway=10.10.10.2
 add dst-address=192.168.20.0/24 gateway=10.10.10.2
+
+
+# ==========================================
+# 2. KONFIGURASI FORTIGATE FIREWALL
+# ==========================================
+# Konfigurasi IP & Akses Ping tiap Interface
+config system interface
+    edit "port1"
+        set mode static
+        set ip 10.10.10.2 255.255.255.252
+        set allowaccess ping
+    next
+    edit "port2"
+        set mode static
+        set ip 10.20.20.1 255.255.255.252
+        set allowaccess ping
+    next
+    edit "port3"
+        set mode static
+        set ip 192.168.20.1 255.255.255.0
+        set allowaccess ping
+    next
+end
+
+# Routing (Default Route ke ISP & Static Route ke LAN)
+config router static
+    edit 1
+        set gateway 10.10.10.1
+        set device "port1"
+    next
+    edit 2
+        set dst 192.168.10.0 255.255.255.0
+        set gateway 10.20.20.2
+        set device "port2"
+    next
+end
+
+# Pembuatan Virtual IP (Port Forwarding Port 80 WAN ke Server DMZ)
+config firewall vip
+    edit "VIP_DMZ_HTTP"
+        set extip 10.10.10.2
+        set extintf "port1"
+        set mappedip "192.168.20.10"
+        set portforward enable
+        set protocol tcp
+        set extport 80
+        set lport 80
+    next
+end
+
+# Kebijakan Firewall (Firewall Policy)
+config firewall policy
+    edit 1
+        set name "LAN_to_WAN"
+        set srcintf "port2"
+        set dstintf "port1"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ALL"
+        set nat enable
+    next
+    edit 2
+        set name "LAN_to_DMZ"
+        set srcintf "port2"
+        set dstintf "port3"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ALL"
+    next
+    edit 3
+        set name "WAN_to_DMZ_HTTP"
+        set srcintf "port1"
+        set dstintf "port3"
+        set srcaddr "all"
+        set dstaddr "VIP_DMZ_HTTP"
+        set action accept
+        set schedule "always"
+        set service "HTTP"
+    next
+end
+
+
+# ==========================================
+# 3. KONFIGURASI CISCO ROUTER
+# ==========================================
+Router> enable
+Router# configure terminal
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip address 10.20.20.2 255.255.255.252
+Router(config-if)# no shutdown
+
+Router(config-if)# interface GigabitEthernet0/1
+Router(config-if)# ip address 192.168.10.1 255.255.255.0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+Router(config)# ip route 0.0.0.0 0.0.0.0 10.20.20.1
+Router(config)# exit
+Router# copy running-config startup-config
+
+
+# ==========================================
+# 4. KONFIGURASI UBUNTU SERVER DMZ
+# ==========================================
+# Mengubah konten default halaman Nginx
+sudo echo "Tumod_4_DMZ_Firewall_15-Kelompok15" > /var/www/html/index.html
+
+# Memastikan service berjalan otomatis saat booting
+sudo systemctl enable nginx
+sudo systemctl restart nginx
