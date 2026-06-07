@@ -3,6 +3,9 @@
 
 ## 1. Topologi Jaringan
 Berikut adalah rancangan topologi jaringan yang digunakan dalam simulasi PNETLab untuk pemisahan zona WAN (Outside/External), LAN (Inside/Internal), dan DMZ (Demilitarized Zone):
+
+![Topologi Jaringan Kelompok 15](images/topologi%20tm4.jpeg)
+
 ---
 
 ## 2. Tabel IP Address Kelompok 15
