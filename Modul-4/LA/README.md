@@ -171,16 +171,16 @@ Berikut adalah dokumentasi hasil pengujian konektivitas yang telah dilakukan:
 
 ### 4.1 Konektivitas Internal & Eksternal
 **Koneksi LAN ke Cisco Router**
-
+![](images/lan-cisco.jpeg)
 
 **Koneksi LAN ke FortiGate**
-
+![](images/lan-forgate.jpeg)
 
 **Koneksi LAN ke MikroTik**
-
+![](images/lan-mikrotik.jpeg)
 
 **Koneksi Server LAN**
-
+![](images/server-lan.jpeg)
 
 ### 4.2 Konektivitas Antar Zona
 **Koneksi WAN ke DMZ**
