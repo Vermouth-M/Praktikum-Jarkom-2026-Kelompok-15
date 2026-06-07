@@ -189,14 +189,18 @@ Berikut adalah dokumentasi hasil pengujian konektivitas yang telah dilakukan:
 
 ### 4.2 Konektivitas Antar Zona
 **Koneksi WAN ke DMZ**
-
+<br>
+![](images/wan-dmz.jpeg)
 
 **Koneksi WAN ke LAN**
-
+<br>
+![](images/wan-lan.jpeg)
 
 ### 4.3 Pengujian Akses Web Server (Browser)
 **Pengujian Client LAN akses IP DMZ**
-
+<br>
+![](images/halaman-browser-ping192.168.jpeg)
 
 **Pengujian Client WAN akses http://10.10.10.2 (Muncul Web Server)**
-
+<br>
+![](images/halaman-browser-ping10.10.10.2.jpeg)
