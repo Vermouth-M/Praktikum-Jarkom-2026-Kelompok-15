@@ -51,7 +51,7 @@ add dst-address=192.168.10.0/24 gateway=10.10.10.2
 add dst-address=192.168.20.0/24 gateway=10.10.10.2
 ```
 
-### 3.2 Fortigate Firewall
+### 3.2 Konfigurasi Fortigate Firewall
 ```bash
 config system interface
     edit "port1"
@@ -132,4 +132,37 @@ config firewall policy
     next
 end
 
+```
+### 3.3 Konfigurasi Cisco Router
+```bash
+# Mengakses mode konfigurasi
+Router> enable
+Router# configure terminal
+
+# Konfigurasi interface yang terhubung ke FortiGate (port2)
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip address 10.20.20.2 255.255.255.252
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+# Konfigurasi interface yang terhubung ke Client LAN
+Router(config)# interface GigabitEthernet0/1
+Router(config-if)# ip address 192.168.10.1 255.255.255.0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+# Routing ke arah FortiGate
+Router(config)# ip route 0.0.0.0 0.0.0.0 10.20.20.1
+Router(config)# exit
+Router# copy running-config startup-config
+```
+
+### 3.4 Konfigurasi Ubuntu Server DMZ
+```bash
+# Mengubah konten default halaman Nginx
+sudo echo "Tumod_4_DMZ_Firewall_15-Kelompok15" > /var/www/html/index.html
+
+# Memastikan service berjalan otomatis
+sudo systemctl enable nginx
+sudo systemctl restart nginx
 ```
