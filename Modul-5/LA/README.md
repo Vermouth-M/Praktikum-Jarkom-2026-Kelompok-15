@@ -201,4 +201,20 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27 (1).jpeg" alt="Konfigurasi Switch dan MikroTik SBY 2" width="800">
 <img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27 (2).jpeg" alt="Konfigurasi Switch dan MikroTik SBY 3" width="800">
 
+### Modul 8 — Konfigurasi FortiGate Surabaya
+- **Konfigurasi:** Konfigurasi interface port1 (WAN) dan port2 (Internal Transit), setup default gateway ke ISP, static route internal Surabaya, Outbound NAT Policy, GRE Tunnel Endpoint, dan OSPF Over GRE.
+- **Bukti Pengumpulan:**
 
+<img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22.jpeg" alt="Konfigurasi FortiGate SBY 1" width="800">
+<img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22 (1).jpeg" alt="Konfigurasi FortiGate SBY 2" width="800">
+<img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22 (2).jpeg" alt="Konfigurasi FortiGate SBY 3" width="800">
+<img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22 (3).jpeg" alt="Konfigurasi FortiGate SBY 4" width="800">
+<img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22 (4).jpeg" alt="Konfigurasi FortiGate SBY 5" width="800">
+
+### Modul 9 — Konfigurasi GRE Tunnel dan OSPF over GRE
+- **Konfigurasi:** Point-to-Point virtual link enkapsulasi GRE antar-FortiGate, penyesuaian MTU/MSS, mapping area OSPF backbone, dan inject static route via OSPF redistribution.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.56.jpeg" alt="Konfigurasi GRE & OSPF 1" width="800">
+<img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.56 (1).jpeg" alt="Konfigurasi GRE & OSPF 2" width="800">
+<img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.57.jpeg" alt="Konfigurasi GRE & OSPF 3" width="800">
