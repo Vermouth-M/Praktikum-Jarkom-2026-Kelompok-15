@@ -163,3 +163,12 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 (2).jpeg" alt="Konfigurasi MikroTik JKT 3" width="800">
 <img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 (3).jpeg" alt="Konfigurasi MikroTik JKT 4" width="800">
 <img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 2.jpeg" alt="Konfigurasi MikroTik JKT 5" width="800">
+
+### Modul 4 — Konfigurasi Ubuntu Server Jakarta
+- **Konfigurasi:** Alokasi IP Static VLAN 60 via VRRP Gateway, instalasi `isc-dhcp-server` dan `nginx`. Konfigurasi scopes pool IP untuk VLAN 10 & VLAN 20 di `/etc/dhcp/dhcpd.conf`.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49.jpeg" alt="Konfigurasi Ubuntu Server 1" width="800">
+<img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (1).jpeg" alt="Konfigurasi Ubuntu Server 2" width="800">
+<img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (2).jpeg" alt="Konfigurasi Ubuntu Server 3" width="800">
+<img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (3).jpeg" alt="Konfigurasi Ubuntu Server 4" width="800">
