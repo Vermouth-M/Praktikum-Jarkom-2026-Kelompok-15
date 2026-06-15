@@ -145,3 +145,11 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 - **Bukti Pengumpulan:**
 
 <img src="tumod p5/no 1/WhatsApp Image 2026-06-14 at 14.16.47.jpeg" alt="Konfigurasi Cisco Switch Jakarta" width="800">
+
+### Modul 2 — Konfigurasi Cisco Router Jakarta
+- **Konfigurasi:** Subinterface VLAN 10, 20, 60, IP fisik, VRRP setup (Master untuk VLAN 10 & 60), DHCP Relay ke Ubuntu Server, dan transit link default-route ke FortiGate.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49.jpeg" alt="Konfigurasi Cisco Router 1" width="800">
+<img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49 (1).jpeg" alt="Konfigurasi Cisco Router 2" width="800">
+<img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49 (2).jpeg" alt="Konfigurasi Cisco Router 3" width="800">
