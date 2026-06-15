@@ -140,13 +140,14 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 ---
 
 ## 3. Hasil Pembagian Tugas & Dokumentasi Modul
-### Modul 1 — Konfigurasi Cisco Switch Jakarta
+
+### Tugas Modul 1 — Konfigurasi Cisco Switch Jakarta
 - **Konfigurasi:** Pembuatan VLAN 10, 20, 60. Pengaturan Access Port ke client dan Ubuntu Server, serta setup Trunking link membawa VLAN 10, 20, dan 60 menuju Cisco & MikroTik Router.
 - **Bukti Pengumpulan:**
 
 <img src="tumod p5/no 1/WhatsApp Image 2026-06-14 at 14.16.47.jpeg" alt="Konfigurasi Cisco Switch Jakarta" width="800">
 
-### Modul 2 — Konfigurasi Cisco Router Jakarta
+### Tugas Modul 2 — Konfigurasi Cisco Router Jakarta
 - **Konfigurasi:** Subinterface VLAN 10, 20, 60, IP fisik, VRRP setup (Master untuk VLAN 10 & 60), DHCP Relay ke Ubuntu Server, dan transit link default-route ke FortiGate.
 - **Bukti Pengumpulan:**
 
@@ -154,7 +155,7 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49 (1).jpeg" alt="Konfigurasi Cisco Router 2" width="800">
 <img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49 (2).jpeg" alt="Konfigurasi Cisco Router 3" width="800">
 
-### Modul 3 — Konfigurasi MikroTik Router Jakarta
+### Tugas Modul 3 — Konfigurasi MikroTik Router Jakarta
 - **Konfigurasi:** Pembuatan VLAN interface 10, 20, 60, IP fisik, VRRP setup (Master untuk VLAN 20), DHCP Relay, dan default route ke FortiGate Jakarta (`10.10.101.1`).
 - **Bukti Pengumpulan:**
 
@@ -164,7 +165,7 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 (3).jpeg" alt="Konfigurasi MikroTik JKT 4" width="800">
 <img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 2.jpeg" alt="Konfigurasi MikroTik JKT 5" width="800">
 
-### Modul 4 — Konfigurasi Ubuntu Server Jakarta
+### Tugas Modul 4 — Konfigurasi Ubuntu Server Jakarta
 - **Konfigurasi:** Alokasi IP Static VLAN 60 via VRRP Gateway, instalasi `isc-dhcp-server` dan `nginx`. Konfigurasi scopes pool IP untuk VLAN 10 & VLAN 20 di `/etc/dhcp/dhcpd.conf`.
 - **Bukti Pengumpulan:**
 
@@ -173,7 +174,7 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (2).jpeg" alt="Konfigurasi Ubuntu Server 3" width="800">
 <img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (3).jpeg" alt="Konfigurasi Ubuntu Server 4" width="800">
 
-### Modul 5 — Konfigurasi FortiGate Jakarta
+### Tugas Modul 5 — Konfigurasi FortiGate Jakarta
 - **Konfigurasi:** Alokasi IP interfaces port1, port2, port3, default-routing ke ISP, Static-routing internal network JKT, Firewall Policy + NAT Outbound, GRE Tunnel, dan dynamic OSPF over GRE dengan static redistribution.
 - **Bukti Pengumpulan:**
 
@@ -186,14 +187,14 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (6).jpeg" alt="Konfigurasi FortiGate JKT 7" width="800">
 <img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (7).jpeg" alt="Konfigurasi FortiGate JKT 8" width="800">
 
-### Modul 6 — Konfigurasi MikroTik ISP
+### Tugas Modul 6 — Konfigurasi MikroTik ISP
 - **Konfigurasi:** Alokasi WAN Link IP, integrasi internet NAT Cloud PNETLab pada ether1, setup NAT Masquerade out-interface ether1.
 - **Bukti Pengumpulan:**
 
 <img src="tumod p5/no 6/WhatsApp Image 2026-06-14 at 16.31.24.jpeg" alt="Konfigurasi MikroTik ISP 1" width="800">
 <img src="tumod p5/no 6/WhatsApp Image 2026-06-14 at 16.31.24 (1).jpeg" alt="Konfigurasi MikroTik ISP 2" width="800">
 
-### Modul 7 — Konfigurasi Switch dan MikroTik Surabaya
+### Tugas Modul 7 — Konfigurasi Switch dan MikroTik Surabaya
 - **Konfigurasi:** Inisiasi VLAN 30 & 40 pada Switch SBY, port access, trunking, sub-vlan interface di MikroTik SBY, DHCP pool server lokal untuk VLAN 30, dan default route ke FortiGate Surabaya.
 - **Bukti Pengumpulan:**
 
@@ -201,7 +202,7 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27 (1).jpeg" alt="Konfigurasi Switch dan MikroTik SBY 2" width="800">
 <img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27 (2).jpeg" alt="Konfigurasi Switch dan MikroTik SBY 3" width="800">
 
-### Modul 8 — Konfigurasi FortiGate Surabaya
+### Tugas Modul 8 — Konfigurasi FortiGate Surabaya
 - **Konfigurasi:** Konfigurasi interface port1 (WAN) dan port2 (Internal Transit), setup default gateway ke ISP, static route internal Surabaya, Outbound NAT Policy, GRE Tunnel Endpoint, dan OSPF Over GRE.
 - **Bukti Pengumpulan:**
 
@@ -211,7 +212,7 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22 (3).jpeg" alt="Konfigurasi FortiGate SBY 4" width="800">
 <img src="tumod p5/no 8/WhatsApp Image 2026-06-14 at 16.39.22 (4).jpeg" alt="Konfigurasi FortiGate SBY 5" width="800">
 
-### Modul 9 — Konfigurasi GRE Tunnel dan OSPF over GRE
+### Tugas Modul 9 — Konfigurasi GRE Tunnel dan OSPF over GRE
 - **Konfigurasi:** Point-to-Point virtual link enkapsulasi GRE antar-FortiGate, penyesuaian MTU/MSS, mapping area OSPF backbone, dan inject static route via OSPF redistribution.
 - **Bukti Pengumpulan:**
 
@@ -219,7 +220,9 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.56 (1).jpeg" alt="Konfigurasi GRE & OSPF 2" width="800">
 <img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.57.jpeg" alt="Konfigurasi GRE & OSPF 3" width="800">
 
-### Modul 10 — Pengujian Akhir & Analisis
+---
+
+## 4. Tugas Modul 10 — Pengujian Akhir & Analisis
 
 ### Hasil Pengujian Konektivitas & Layanan:
 1. **DHCP Client JKT (VLAN 10)**: Berhasil mendapatkan alokasi dynamic IP dari Centralized Ubuntu Server melalui DHCP Relay.
