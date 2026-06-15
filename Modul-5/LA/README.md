@@ -17,6 +17,6 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 - **Tinycore Linux** & **VPCS** (Client Nodes)
 
 ### Gambar Topologi Jaringan
-![Topologi Jaringan Enterprise](topologi-p5.jpeg)
+![Topologi Jaringan Enterprise](tumod p5/topologi-p5.jpeg)
 
 ---
