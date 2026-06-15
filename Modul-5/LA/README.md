@@ -153,3 +153,13 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49.jpeg" alt="Konfigurasi Cisco Router 1" width="800">
 <img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49 (1).jpeg" alt="Konfigurasi Cisco Router 2" width="800">
 <img src="tumod p5/no 2/WhatsApp Image 2026-06-14 at 14.19.49 (2).jpeg" alt="Konfigurasi Cisco Router 3" width="800">
+
+### Modul 3 — Konfigurasi MikroTik Router Jakarta
+- **Konfigurasi:** Pembuatan VLAN interface 10, 20, 60, IP fisik, VRRP setup (Master untuk VLAN 20), DHCP Relay, dan default route ke FortiGate Jakarta (`10.10.101.1`).
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24.jpeg" alt="Konfigurasi MikroTik JKT 1" width="800">
+<img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 (1).jpeg" alt="Konfigurasi MikroTik JKT 2" width="800">
+<img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 (2).jpeg" alt="Konfigurasi MikroTik JKT 3" width="800">
+<img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 (3).jpeg" alt="Konfigurasi MikroTik JKT 4" width="800">
+<img src="tumod p5/no 3/WhatsApp Image 2026-06-14 at 14.23.24 2.jpeg" alt="Konfigurasi MikroTik JKT 5" width="800">
