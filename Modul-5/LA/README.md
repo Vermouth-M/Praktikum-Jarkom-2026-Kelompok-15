@@ -4,6 +4,6 @@ Implementasi jaringan enterprise dengan konsep VLAN, trunk, routing dinamis OSPF
 
 ## Topologi
 
-![Topologi](images/topologip5.jpeg)
+![Topologi](images/topologi%20p5.jpeg)
 
 ---
