@@ -218,3 +218,26 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.56.jpeg" alt="Konfigurasi GRE & OSPF 1" width="800">
 <img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.56 (1).jpeg" alt="Konfigurasi GRE & OSPF 2" width="800">
 <img src="tumod p5/no 9/WhatsApp Image 2026-06-15 at 14.42.57.jpeg" alt="Konfigurasi GRE & OSPF 3" width="800">
+
+### Modul 10 — Pengujian Akhir & Analisis
+
+### Hasil Pengujian Konektivitas & Layanan:
+1. **DHCP Client JKT (VLAN 10)**: Berhasil mendapatkan alokasi dynamic IP dari Centralized Ubuntu Server melalui DHCP Relay.
+2. **DHCP Client SBY (VLAN 30)**: Berhasil mendapatkan alokasi dynamic IP dari Local MikroTik Surabaya.
+3. **Ping Internet dari Jakarta & Surabaya**: Aman / Reachable.
+4. **Ping Antar Site (Cross-Site)**: Sukses terkoneksi melintasi GRE Tunnel.
+5. **Akses Web Server**: Client Branch Surabaya berhasil mengakses Nginx Web Server Jakarta.
+6. **Routing Table OSPF**: Seluruh subnet enterprise tersinkronisasi secara dinamis.
+
+#### Bukti Dokumentasi Pengujian:
+<img src="tumod p5/WhatsApp Image 2026-06-15 at 20.23.35.jpeg" alt="Hasil Pengujian Akhir 1" width="800">
+<img src="tumod p5/WhatsApp Image 2026-06-15 at 20.23.36.jpeg" alt="Hasil Pengujian Akhir 2" width="800">
+<img src="tumod p5/WhatsApp Image 2026-06-15 at 20.23.36 (1).jpeg" alt="Hasil Pengujian Akhir 3" width="800">
+<img src="tumod p5/WhatsApp Image 2026-06-15 at 20.23.37.jpeg" alt="Hasil Pengujian Akhir 4" width="800">
+<img src="tumod p5/WhatsApp Image 2026-06-15 at 20.23.37 (1).jpeg" alt="Hasil Pengujian Akhir 5" width="800">
+
+### Analisis Jalur Lalu Lintas Data (Traffic Path Analysis)
+- **Traffic Client JKT ke Internet**: Client $\rightarrow$ Virtual IP Gateway VRRP (Cisco/MikroTik) $\rightarrow$ FortiGate Jakarta (proses Source NAT) $\rightarrow$ MikroTik ISP $\rightarrow$ Cloud Internet.
+- **Traffic Client SBY ke Internet**: Client $\rightarrow$ MikroTik Surabaya $\rightarrow$ FortiGate Surabaya (proses Source NAT) $\rightarrow$ MikroTik ISP $\rightarrow$ Cloud Internet.
+- **Traffic Client SBY ke Web Server JKT**: Client Surabaya $\rightarrow$ MikroTik Surabaya $\rightarrow$ Edge FortiGate Surabaya $\rightarrow$ Dienkapsulasi ke **GRE Tunnel** melewati ISP $\rightarrow$ Didekapsulasi oleh FortiGate Jakarta $\rightarrow$ VRRP Gateway Jakarta $\rightarrow$ Ubuntu Server (VLAN 60).
+- **Failover Analisis (VRRP)**: Apabila link utama pada VRRP Master (misal Cisco Router untuk VLAN 10) terputus, Backup Router (MikroTik) secara otomatis mengambil alih fungsi Virtual IP Gateway dalam hitungan detik (*miliseconds*), sehingga menjamin redundansi tinggi (*high availability*) pada sisi infrastruktur LAN HQ Jakarta.
