@@ -172,3 +172,18 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (1).jpeg" alt="Konfigurasi Ubuntu Server 2" width="800">
 <img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (2).jpeg" alt="Konfigurasi Ubuntu Server 3" width="800">
 <img src="tumod p5/no 4/WhatsApp Image 2026-06-14 at 14.31.49 (3).jpeg" alt="Konfigurasi Ubuntu Server 4" width="800">
+
+### Modul 5 — Konfigurasi FortiGate Jakarta
+- **Konfigurasi:** Alokasi IP interfaces port1, port2, port3, default-routing ke ISP, Static-routing internal network JKT, Firewall Policy + NAT Outbound, GRE Tunnel, dan dynamic OSPF over GRE dengan static redistribution.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50.jpeg" alt="Konfigurasi FortiGate JKT 1" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (1).jpeg" alt="Konfigurasi FortiGate JKT 2" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (2).jpeg" alt="Konfigurasi FortiGate JKT 3" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (3).jpeg" alt="Konfigurasi FortiGate JKT 4" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (4).jpeg" alt="Konfigurasi FortiGate JKT 5" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (5).jpeg" alt="Konfigurasi FortiGate JKT 6" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (6).jpeg" alt="Konfigurasi FortiGate JKT 7" width="800">
+<img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (7).jpeg" alt="Konfigurasi FortiGate JKT 8" width="800">
+
+
