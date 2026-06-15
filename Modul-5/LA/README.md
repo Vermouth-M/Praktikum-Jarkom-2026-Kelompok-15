@@ -138,3 +138,10 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 - **Sisi Surabaya**: `192.168.30.0/24`, `192.168.40.0/24`, `172.16.0.2/32`
 
 ---
+
+## 3. Hasil Pembagian Tugas & Dokumentasi Modul
+### Modul 1 — Konfigurasi Cisco Switch Jakarta
+- **Konfigurasi:** Pembuatan VLAN 10, 20, 60. Pengaturan Access Port ke client dan Ubuntu Server, serta setup Trunking link membawa VLAN 10, 20, dan 60 menuju Cisco & MikroTik Router.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 1/WhatsApp Image 2026-06-14 at 14.16.47.jpeg" alt="Konfigurasi Cisco Switch Jakarta" width="800">
