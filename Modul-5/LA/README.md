@@ -186,4 +186,19 @@ Topologi ini mensimulasikan jaringan enterprise yang menghubungkan 2 lokasi utam
 <img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (6).jpeg" alt="Konfigurasi FortiGate JKT 7" width="800">
 <img src="tumod p5/no 5/WhatsApp Image 2026-06-14 at 16.29.50 (7).jpeg" alt="Konfigurasi FortiGate JKT 8" width="800">
 
+### Modul 6 — Konfigurasi MikroTik ISP
+- **Konfigurasi:** Alokasi WAN Link IP, integrasi internet NAT Cloud PNETLab pada ether1, setup NAT Masquerade out-interface ether1.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 6/WhatsApp Image 2026-06-14 at 16.31.24.jpeg" alt="Konfigurasi MikroTik ISP 1" width="800">
+<img src="tumod p5/no 6/WhatsApp Image 2026-06-14 at 16.31.24 (1).jpeg" alt="Konfigurasi MikroTik ISP 2" width="800">
+
+### Modul 7 — Konfigurasi Switch dan MikroTik Surabaya
+- **Konfigurasi:** Inisiasi VLAN 30 & 40 pada Switch SBY, port access, trunking, sub-vlan interface di MikroTik SBY, DHCP pool server lokal untuk VLAN 30, dan default route ke FortiGate Surabaya.
+- **Bukti Pengumpulan:**
+
+<img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27.jpeg" alt="Konfigurasi Switch dan MikroTik SBY 1" width="800">
+<img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27 (1).jpeg" alt="Konfigurasi Switch dan MikroTik SBY 2" width="800">
+<img src="tumod p5/no 7/WhatsApp Image 2026-06-14 at 16.34.27 (2).jpeg" alt="Konfigurasi Switch dan MikroTik SBY 3" width="800">
+
 
